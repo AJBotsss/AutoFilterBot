@@ -1954,7 +1954,7 @@ async def global_filters(client, message, text=False):
                             except KeyError:
                                 grpid = await active_connection(str(message.from_user.id))
                                 await save_group_settings(grpid, 'auto_ffilter', True)
-                                settings = await get_settings(messag see.chat.id)
+                                settings = await get_settings(message.chat.id)
                                 if settings['auto_ffilter']:
                                     await auto_filter(client, message) 
                         else:
